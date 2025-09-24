@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "Введи начальное число (например, 7): " start
+start=${1:-7} 
 
 # 1. Установка git и curl (без вопросов)
 sudo apt update
