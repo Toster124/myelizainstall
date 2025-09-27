@@ -38,7 +38,7 @@ free -h
 # 6. Цикл
 for i in $(seq $start $((start+2)))
 do
-    git clone https://github.com/elizaos/eliza.git --branch v0.25.8
+    git clone https://github.com/elizaos/eliza.git --branch v0.25.9
     cd eliza
     pnpm install --no-frozen-lockfile
     npx elizaos plugins add @elizaos/plugin-giphy
