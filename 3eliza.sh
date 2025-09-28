@@ -38,13 +38,15 @@ free -h
 # 6. Цикл
 for i in $(seq $start $((start+2)))
 do
-    git clone https://github.com/elizaos/eliza.git --branch v0.25.9
+    git clone --depth=1 https://github.com/elizaos/eliza.git --branch v0.25.9
     cd eliza
+    git clone https://github.com/elizaos-plugins/client-twitter.git packages/client-twitter
+    git clone https://github.com/elizaos-plugins/plugin-giphy.git packages/plugin-giphy
     pnpm install --no-frozen-lockfile
-    npx elizaos plugins add @elizaos/plugin-giphy
-    npx elizaos plugins add @elizaos/client-twitter
     pnpm add @elizaos/core@workspace:* --filter ./packages/client-twitter
     pnpm add @elizaos-plugins/client-twitter@workspace:* --filter ./agent
+    pnpm add @elizaos/core@workspace:* --filter ./packages/plugin-giphy
+    pnpm add @elizaos-plugins/plugin-giphy@workspace:* --filter ./agent
     pnpm build
     cd ..
     mv eliza hool$i
