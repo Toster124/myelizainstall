@@ -45,7 +45,6 @@ do
     npx elizaos plugins add @elizaos/client-twitter
     pnpm add @elizaos/core@workspace:* --filter ./packages/client-twitter
     pnpm add @elizaos-plugins/client-twitter@workspace:* --filter ./agent
-    pnpm install better-sqlite3@latest -w
     pnpm build
     cd ..
     mv eliza hool$i
