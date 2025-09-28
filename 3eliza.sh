@@ -48,6 +48,8 @@ do
     pnpm add @elizaos/core@workspace:* --filter ./packages/plugin-giphy
     pnpm add @elizaos-plugins/plugin-giphy@workspace:* --filter ./agent
     pnpm build
+    pm2 start ecosystem.config.js
+    pm2 stop all
     cd ..
     mv eliza hool$i
 done
